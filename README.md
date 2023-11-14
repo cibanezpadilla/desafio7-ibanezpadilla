@@ -8,3 +8,4 @@
 3. La aplicacion corre bajo el puerto 8080
 4. Las vistas se visualizan en localhost8080/api/views/
 5. Se puede ejecutar por query el filtro category para filtrar productos por categoría# desafio7-ibanezpadilla
+6. Para hacer la autenticacion con Github debe estar deslogeado de su cuenta Github

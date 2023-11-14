@@ -1,0 +1,17 @@
+<h3 id="login_title">Log in to your account</h3>
+<button id="github_button" onclick="location.href='/api/sessions/auth/github'">GITHUB</button>
+
+<p id="local-login_tittle">Or with email and password</p>
+<div id="div_form">
+    <form action="/api/sessions/login" method="post">
+    Email: <input id="form_line" type="email" name="email" id="email">
+    <br>
+    Password: <input id="form_line" type="password" name="password" id="password">
+    <br>
+    <div id="login_buttons">
+        <input id="login_button" type="submit" value="Login">
+        <button id="restore_button"><a href="/api/views/restaurar">Restore password</a></button>
+    </div>
+    
+    </form>
+</div>

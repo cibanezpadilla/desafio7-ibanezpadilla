@@ -1,0 +1,124 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700;800&display=swap');
+
+body {
+    font-family: 'Poppins', sans-serif;
+    /* padding-inline: 2rem; */
+    
+  }
+
+#logo{
+    background-color: black;
+    padding: 3rem;
+    color: white;
+    text-align: center;
+    letter-spacing: 0.7cm;
+    font-weight: 200;
+}
+
+#user-rol{
+    margin-top: 2rem;
+    text-align: center;
+}
+#user_welcome{    
+    text-align: center;
+}
+
+#catalogue_title{
+    text-align: center;
+    margin-top: 4rem;
+    margin-bottom: 3.5rem;
+}
+
+h3{
+    /* padding-top: 2rem; */
+    text-transform: uppercase;
+    /* padding-left: 2rem; */    
+}
+
+
+#user-email{
+    text-align: center;
+}
+
+#signout_button{
+    display: flex;
+    justify-content: center;
+    margin: 0 auto;
+    margin-top: 1rem;
+    background-color: black;
+    color: white;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    font-size: 1rem;
+}
+#signout_button a {
+    text-decoration: none;
+    color: white;
+}
+
+#contenedor{
+    padding-inline: 2rem;
+    margin-bottom: 5rem;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 4rem;
+}
+
+#card{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    border: 2px gray;
+    border-radius: 10px;
+    /* background-color: aqua; */
+    width: fit-content;
+    padding: 1rem;
+    padding-bottom: 1.5rem;
+    margin-bottom: 2rem;
+}
+
+#image{
+    width: 200px;
+}
+
+#prod_title{
+    margin-top: 10px;
+    margin-bottom: 5px;
+}
+
+#prod_info {
+    margin-block: 5px;
+}
+
+#button_verMas{
+    margin: 0 auto;
+    margin-top: 1rem;
+    background-color: black;
+    padding: 10px;
+    border-radius: 5px;
+    color: white;
+    text-decoration: none;
+}
+
+#pagination_buttons{
+    margin-top: 30px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    align-self: center;
+    gap: 2rem;
+}
+
+#pagination_button{    
+    background-color: black;
+    padding: 10px;
+    border-radius: 5px;
+    color: white;
+    text-decoration: none;    
+}
+

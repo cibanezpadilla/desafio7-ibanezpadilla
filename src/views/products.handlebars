@@ -1,0 +1,51 @@
+{{#if user.isAdmin}}
+    <p id="user-rol">Role: ADMIN ACCOUNT</p>
+{{else}}
+    <p id="user-rol">Role: USER ACCOUNT</p>
+{{/if}}
+<h2 id="user_welcome">Welcome, {{user.first_name}}</h2>
+<p id="user-email">Email: {{user.email}}</p>
+
+<button id="signout_button"><a href="/api/sessions/signout">SIGN OUT</a></button>
+
+
+
+<h2 id="catalogue_title">CATALOGUE</h2>
+
+<div id="contenedor">
+    {{#each productList}}
+        <div id="card"  style="border-style: solid;border-color:rgb(201, 201, 201)">
+            <img id="image" src="{{thumbnail}}" alt="">
+            <h3 id="prod_title">{{title}}</h3>
+            <p id="prod_info">ID: {{_id}}</p>
+            {{!-- <p>Status: {{status}}</p> --}}
+            {{!-- <p>Description: {{description}}</p> --}}
+            <p id="prod_info">Price: ${{price}}</p>
+            {{!-- <p>Code: {{code}}</p> --}}
+            {{!-- <p>Stock: {{stock}}</p> --}}
+            <p id="prod_info">Category: {{category}}</p>
+            <a id="button_verMas" href="/api/views/products/{{_id}}">Ver Mas</a>
+        </div>         
+    {{/each}}   
+</div>
+<div id="pagination_buttons">
+        {{#if prevPage}}
+            {{#if category}}        
+                <a id="pagination_button" href="/api/views/products/?limit={{limit}}&page={{prevPage}}&order={{order}}&category={{category}}">Prev Page</a>
+            {{else}}
+                <a id="pagination_button" href="/api/views/products/?limit={{limit}}&page={{prevPage}}&order={{order}}">Prev Page</a>
+            {{/if}}
+        {{else}}
+            <p></p>
+        {{/if}}    
+        <p id="pagination_number">Page {{page}}</p>
+        {{#if nextPage}}
+            {{#if category}}
+                <a id="pagination_button" href="/api/views/products/?limit={{limit}}&page={{nextPage}}&order={{order}}&category={{category}}">Next Page</a>
+            {{else}}
+                <a id="pagination_button" href="/api/views/products/?limit={{limit}}&page={{nextPage}}&order={{order}}">Next Page</a>
+            {{/if}}   
+        {{else}}
+            <p></p>
+        {{/if}}    
+    </div>

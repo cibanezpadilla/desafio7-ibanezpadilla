@@ -9,3 +9,4 @@
 4. Las vistas se visualizan en localhost8080/api/views/
 5. Se puede ejecutar por query el filtro category para filtrar productos por categoría# desafio7-ibanezpadilla
 6. Para hacer la autenticacion con Github debe estar deslogeado de su cuenta Github
+7. Arreglé lo necesario para que en la vista de productos aparezca el rol: ADMIN si el usuario se loggea con el email adminCoder@coder.com y la contraseña adminCod3r123

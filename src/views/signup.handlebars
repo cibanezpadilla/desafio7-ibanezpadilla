@@ -1,3 +1,12 @@
+<h2 id="signup_title">Create your account</h2>
+<div id="signup-redirect-login">
+    <p>Have an account?</p>
+    <a href="/api/views/login">Log in now</a>
+</div>
+
+<button id="github_button" onclick="location.href='/api/sessions/auth/github'">GITHUB</button>
+
+<p id="local-signup_tittle">Or with email and password</p>
 <div id="div_form">
     <form action="/api/sessions/signup" method="post">
         First Name: <input id="form_line" type="text" name="first_name" id="first_name">
@@ -12,4 +21,4 @@
     </form>
 </div>
 
-<button id="github_button" onclick="location.href='/api/sessions/auth/github'">GITHUB</button>
+

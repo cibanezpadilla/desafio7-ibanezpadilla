@@ -17,14 +17,14 @@
         <div id="card"  style="border-style: solid;border-color:rgb(201, 201, 201)">
             <img id="image" src="{{thumbnail}}" alt="">
             <h3 id="prod_title">{{title}}</h3>
-            <p id="prod_info">ID: {{_id}}</p>
+            {{!-- <p id="prod_info">ID: {{_id}}</p> --}}
             {{!-- <p>Status: {{status}}</p> --}}
             {{!-- <p>Description: {{description}}</p> --}}
             <p id="prod_info">Price: ${{price}}</p>
             {{!-- <p>Code: {{code}}</p> --}}
             {{!-- <p>Stock: {{stock}}</p> --}}
             <p id="prod_info">Category: {{category}}</p>
-            <a id="button_verMas" href="/api/views/products/{{_id}}">Ver Mas</a>
+            <a id="button_verMas" href="/api/views/products/{{_id}}">More details</a>
         </div>         
     {{/each}}   
 </div>

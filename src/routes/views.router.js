@@ -33,10 +33,10 @@ router.get("/api/views/products", async (req, res) => {
       if (!req.session.passport){
         return res.redirect('/api/views/login')
       }
-      const { first_name, email } = req.user;
-      console.log(req)
-      /* const { name, email: emailG } = profile._json; */
-      res.render('products', {/* userG: { name, emailG}, */ user: { first_name, email }, productList: productObject, category, page, limit, order, nextPage, prevPage, style: "products" });          
+      const { first_name, email, isAdmin } = req.user;
+      console.log(req.user)
+      
+      res.render('products', { user: { first_name, email, isAdmin }, productList: productObject, category, page, limit, order, nextPage, prevPage, style: "products" });          
     } catch (error) {
       res.status(500).json({ message: error.message });
     }
@@ -44,12 +44,12 @@ router.get("/api/views/products", async (req, res) => {
 
 
 router.get("/api/views/restaurar", (req, res) => {
-  res.render("restaurar");
+  res.render("restore", {style: "restore"});
 });
 
 
 router.get("/api/views/error", (req, res) => {
-  res.render("error");
+  res.render("error", {style: "error"});
 });
 
 

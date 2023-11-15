@@ -14,13 +14,19 @@ passport.use(
     async (req, email, password, done) => {
       const { first_name, last_name } = req.body;
       if (!first_name || !last_name || !email || !password) {
-        return done(null, false);
+        return done(null, false);      
       }
       try {
+        let isAdmin
+        if (email === "adminCoder@coder.com"){
+          isAdmin = true
+        }else{
+          isAdmin = false
+        }
         const hashedPassword = await hashData(password);
         const createdUser = await uManager.createUser({
           ...req.body,
-          password: hashedPassword,
+          password: hashedPassword, isAdmin
         });
         done(null, createdUser);
       } catch (error) {
@@ -43,16 +49,10 @@ passport.use(
         if (!user) {
           done(null, false);
         }
-
         const isPasswordValid = await compareData(password, user.password);
         if (!isPasswordValid) {
           return done(null, false);
-        }
-        // const sessionInfo =
-        //   email === "adminCoder@coder.com"
-        //     ? { email, first_name: user.first_name, isAdmin: true }
-        //     : { email, first_name: user.first_name, isAdmin: false };
-        // req.session.user = sessionInfo;
+        }         
         done(null, user);
         console.log(user)
       } catch (error) {
@@ -74,7 +74,7 @@ passport.use(
     async (accessToken, refreshToken, profile, done) => {
       try {
         const userDB = await uManager.findUserByEmail(profile._json.email);
-        console.log(profile)
+        /* console.log(profile) */
         // login
         if (userDB) {
           if (userDB.isGithub) {

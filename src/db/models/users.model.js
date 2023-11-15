@@ -20,6 +20,10 @@ const usersSchema = new mongoose.Schema({
   isGithub: {
     type: Boolean,
     default: false,
+  },
+  isAdmin: {
+    type: Boolean,
+    required: false,
   }
 });
 

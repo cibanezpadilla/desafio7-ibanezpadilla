@@ -16,8 +16,54 @@ body {
     font-weight: 200;
 }
 
+#signup_title{
+    margin-left: 2rem;
+    margin-top: 4rem;
+    margin-bottom: 0;
+}
+
+#signup-redirect-login{
+    display: flex;
+    gap: 1rem;
+    margin-left: 2rem;
+    align-items: center;
+}
+
+#signup-redirect-login p{
+    font-size: 0.7rem;
+    margin-top: 0.7rem;    
+}
+
+#signup-redirect-login a{
+    font-size: 0.7rem;    
+    text-decoration: none;       
+}
+
+
+#github_button{
+    display: flex;
+    justify-content: center;
+    /* margin: 0 auto; */
+    margin-left: 2rem;
+    margin-top: 2rem;
+    background-color: black;
+    color: white;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    font-size: 1rem;
+}
+
+
+#local-signup_tittle{
+    font-size: 0.8rem;
+    margin-top: 3rem;
+    margin-left: 2rem;
+}
+
+
 #div_form{
-    padding-top: 2rem;
+    /* padding-top: 2rem; */
     padding-left: 2rem;
 }
 

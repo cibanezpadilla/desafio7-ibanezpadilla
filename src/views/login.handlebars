@@ -1,12 +1,10 @@
 <h2 id="login_title">Log in to your account</h2>
 <div id="login-redirect-signup">
     <p>Don't have an account?</p>
-    <a href="/api/views/signup">Sign up</a>
+    <a href="/signup">Sign up</a>
 </div>
 
-<button id="github_button" onclick="location.href='/api/sessions/auth/github'">GITHUB</button>
-
-<p id="local-login_tittle">Or with email and password</p>
+<p id="local-login_tittle">Log in with email and password</p>
 <div id="div_form">
     <form action="/api/sessions/login" method="post">
     Email: <input id="form_line" type="email" name="email" id="email">
@@ -15,8 +13,11 @@
     <br>
     <div id="login_buttons">
         <input id="login_button" type="submit" value="Login">
-        <button id="restore_button"><a href="/api/views/restaurar">Restore password</a></button>
+        <button id="restore_button"><a href="/restaurar">Restore password</a></button>
     </div>
     
     </form>
 </div>
+
+
+<button id="github_button" onclick="location.href='/api/sessions/auth/github'">GITHUB</button>

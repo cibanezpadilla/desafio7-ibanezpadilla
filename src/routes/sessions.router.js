@@ -14,16 +14,16 @@ const router = Router();
 router.post(
     "/signup",
     passport.authenticate("signup", {
-      successRedirect: "/api/views/products",
-      failureRedirect: "/api/views/error",
+      successRedirect: "/home",
+      failureRedirect: "/error",
     })
   );
   
   router.post(
     "/login",
     passport.authenticate("login", {
-      successRedirect: "/api/views/products",
-      failureRedirect: "/api/views/error",
+      successRedirect: "/home",
+      failureRedirect: "/error",
     })
   );
   
@@ -38,13 +38,13 @@ router.post(
   
 
   router.get("/callback", passport.authenticate("github"), (req, res) => {
-    res.redirect('/api/views/products');
+    res.redirect('/home');
   });
   
 
   router.get("/signout", (req, res) => {
     req.session.destroy(() => {
-      res.redirect("/api/views/login");
+      res.redirect("/login");
     });
   });
   
@@ -54,7 +54,7 @@ router.post(
     try {
       const user = await uManager.findUserByEmail(email);      
       if (!user) {        
-        return res.redirect("/api/views/restaurar");
+        return res.redirect("/restaurar");
       }
       const hashedPassword = await hashData(password);
       user.password = hashedPassword;

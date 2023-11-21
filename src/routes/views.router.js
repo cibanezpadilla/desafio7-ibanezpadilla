@@ -5,17 +5,17 @@ import { cManager } from "../dao/managersMongo/cartManagerMongo.js";
 
 const router = Router();
 
-router.get("/api/views/login", (req, res) => {  
+router.get("/login", (req, res) => {  
   if (req.session.passport){
-    return res.redirect('/api/views/products')
+    return res.redirect('/home')
   }  
   res.render("login", {style: "login"});  
 });
 
 
-router.get("/api/views/signup", (req, res) => {  
+router.get("/signup", (req, res) => {  
   if (req.session.passport){
-    return res.redirect('/api/views/products')
+    return res.redirect('/home')
   }   
   res.render("signup", {style: "signup"});
 });
@@ -23,7 +23,7 @@ router.get("/api/views/signup", (req, res) => {
 
 
 
-router.get("/api/views/products", async (req, res) => {  
+router.get("/home", async (req, res) => {  
   try {
       const products = await manager.findAll(req.query)
       const {payload, info, page, limit, order, query} = products
@@ -31,7 +31,7 @@ router.get("/api/views/products", async (req, res) => {
       const {category} = query      
       const productObject = payload.map(doc => doc.toObject()); 
       if (!req.session.passport){
-        return res.redirect('/api/views/login')
+        return res.redirect('/login')
       }
       const { first_name, email, isAdmin } = req.user;
       console.log(req.user)
@@ -43,12 +43,12 @@ router.get("/api/views/products", async (req, res) => {
 });
 
 
-router.get("/api/views/restaurar", (req, res) => {
+router.get("/restaurar", (req, res) => {
   res.render("restore", {style: "restore"});
 });
 
 
-router.get("/api/views/error", (req, res) => {
+router.get("/error", (req, res) => {
   res.render("error", {style: "error"});
 });
 
@@ -58,7 +58,7 @@ router.get("/api/views/error", (req, res) => {
 
 
 
-router.get('/api/views/products/:id', async (req, res) => {  
+router.get('/home/:id', async (req, res) => {  
   try {
       const { id } = req.params
       const product = await manager.findById(id)              
@@ -70,7 +70,7 @@ router.get('/api/views/products/:id', async (req, res) => {
 
 
 
-router.get('/api/views/cart/:cid', async (req, res) => {  
+router.get('/cart/:cid', async (req, res) => {  
   try {
     const { cid } = req.params
     const response = await cManager.getCartProducts(cid)

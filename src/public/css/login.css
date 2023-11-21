@@ -18,7 +18,7 @@ body {
 
 #login_title{
     margin-left: 2rem;
-    margin-top: 4rem;
+    margin-top: 3rem;
     margin-bottom: 0;
 }
 
@@ -40,24 +40,12 @@ body {
 }
 
 
-#github_button{
-    display: flex;
-    justify-content: center;
-    /* margin: 0 auto; */
-    margin-left: 2rem;
-    margin-top: 2rem;
-    background-color: black;
-    color: white;
-    padding: 10px;
-    border: none;
-    border-radius: 5px;
-    font-size: 1rem;
-}
+
 
 
 #local-login_tittle{
     font-size: 0.8rem;
-    margin-top: 3rem;
+    margin-top: 2rem;
     margin-left: 2rem;
 }
 
@@ -104,3 +92,17 @@ body {
 }
 
 
+#github_button{
+    display: flex;
+    justify-content: center;
+    /* margin: 0 auto; */
+    margin-left: 2rem;
+    margin-top: 4rem;
+    margin-bottom: 6rem;
+    background-color: black;
+    color: white;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    font-size: 1rem;
+}

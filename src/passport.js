@@ -74,7 +74,7 @@ passport.use(
     },
     async (accessToken, refreshToken, profile, done) => {
       try {
-        const userDB = await uManager.findUserByEmail(profile._json.email);
+        const userDB = await uManager.findUserByEmail(profile.emails[0].value);
         /* console.log(profile) */
         // login
         if (userDB) {
@@ -88,7 +88,7 @@ passport.use(
         const infoUser = {
           first_name: profile._json.name.split(" ")[0], // ['farid','sesin']
           last_name: profile._json.name.split(" ")[1],
-          email: profile._json.email,
+          email: profile.emails[0].value,
           password: " ",
           isGithub: true,
         };
